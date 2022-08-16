@@ -49,16 +49,8 @@ public class PlayerBehavior : MonoBehaviour
         if (Input.GetButton("Fire1") && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") != true)
         {
             anim.SetTrigger("Attack");
-            if (transform.localScale.x == 1)
-            {
-                yield return new WaitForSeconds(attackwait);
-                swordAttack.AttackRight();
-            }
-            else
-            {
-                yield return new WaitForSeconds(attackwait);
-                swordAttack.AttackLeft();
-            }
+            yield return new WaitForSeconds(attackwait);
+            swordAttack.Attack();
 
         }
     }

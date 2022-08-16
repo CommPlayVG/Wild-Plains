@@ -16,19 +16,9 @@ public class SwordAttack : MonoBehaviour
         SwordCollider.enabled = false;
     }
 
-
-    public void AttackLeft()
+    public void Attack()
     {
         SwordCollider.enabled = true;
-        //transform.position = new Vector2(RightAttackOffset.x * -1, RightAttackOffset.y);
-        Debug.Log("Left attack" + transform.position);
-    }
-
-    // Update is called once per frame
-    public void AttackRight()
-    {
-        SwordCollider.enabled = true;
-        Debug.Log("Right Attack" + transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
