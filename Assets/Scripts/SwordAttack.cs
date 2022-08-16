@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    public SlimeBehavior slimeBehavior;
-
     Vector2 RightAttackOffset;
 
     public Collider2D SwordCollider;
@@ -22,22 +20,26 @@ public class SwordAttack : MonoBehaviour
     public void AttackLeft()
     {
         SwordCollider.enabled = true;
-        transform.position = new Vector2(RightAttackOffset.x * -1, RightAttackOffset.y);
-        print("left");
+        //transform.position = new Vector2(RightAttackOffset.x * -1, RightAttackOffset.y);
+        Debug.Log("Left attack" + transform.position);
     }
 
     // Update is called once per frame
     public void AttackRight()
     {
         SwordCollider.enabled = true;
-        print("right");
+        Debug.Log("Right Attack" + transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == "Enemy" && SwordCollider.enabled == true)
         {
-            slimeBehavior.Damage();
+            SlimeBehavior slimeBehavior = collider.GetComponent<SlimeBehavior>();
+            if (slimeBehavior != null)
+            {
+                slimeBehavior.Damage();
+            }
         }
     }
 
