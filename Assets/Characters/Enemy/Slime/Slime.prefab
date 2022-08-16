@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2522432528226504112}
   - component: {fileID: 4000056197691073082}
   - component: {fileID: 9198229932846707185}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1463946308, guid: 8595663b83c14f44787e40689869ec1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   radius: 0.08
   height: 0.16
   canMove: 1
-  maxSpeed: 0.2
+  maxSpeed: 0.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -253,4 +253,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 2490085341402441811, guid: 3cd7fbaa2af19494d822ea7153335efc, type: 3}
+  target: {fileID: 0}
