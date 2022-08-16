@@ -40,8 +40,17 @@ public class PlayerBehavior : MonoBehaviour
 
         StartCoroutine(Attack());
 
+        Block();
      
 
+    }
+
+    private void Block()
+    {
+        if (Input.GetButton("Fire2") && anim.GetCurrentAnimatorStateInfo(0).IsName("Shield") != true)
+        {
+            anim.SetTrigger("Block");
+        }
     }
 
     IEnumerator Attack()
@@ -57,7 +66,7 @@ public class PlayerBehavior : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") != true)
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") != true && anim.GetCurrentAnimatorStateInfo(0).IsName("Shield") != true)
         {
             rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
             swordAttack.SwordCollider.enabled = false;
